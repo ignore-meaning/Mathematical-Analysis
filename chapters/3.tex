@@ -257,7 +257,8 @@
 \end{theorem}\vspace{9pt}
 
 \begin{theorem}
-    \[Ao(\mathcal{A}) = o(\mathcal{A}) \quad (A \neq 0) \tag{1}\]
+    对于函数集 $\mathcal{A}, \mathcal{B}$，非零实数 $A$，
+    \[Ao(\mathcal{A}) = o(\mathcal{A}) \tag{1}\]
     \[o(\mathcal{A}) \pm o(\mathcal{A}) \subseteq o(\mathcal{A}) \tag{2}\]
     \[o(\mathcal{A}) \cdot \mathcal{B} \subseteq o(\mathcal{AB}) \tag{3}\]
     \[o(\mathcal{A}) \circ \mathcal{B} \subseteq o(\mathcal{A} \circ \mathcal{B}) \tag{4}\]
@@ -266,12 +267,13 @@
 \end{theorem}\vspace{9pt}
 
 \begin{theorem}
-    \[O(f) = AO(f) \quad (A \neq 0) \tag{1}\]
-    \[O(f) \pm O(f) \subseteq O(f) \tag{2}\]
-    \[\mathcal{A} \cdot O(f) \subseteq O(\mathcal{A} \cdot f) \tag{3}\]
-    \[O(f) \circ \mathcal{A} \subseteq O(f \circ \mathcal{A}) \tag{4}\]
+    对于函数集 $\mathcal{A}, \mathcal{B}$，非零实数 $A$，
+    \[AO(\mathcal{A}) = O(\mathcal{A}) \tag{1}\]
+    \[O(\mathcal{A}) \pm O(\mathcal{A}) \subseteq O(\mathcal{A}) \tag{2}\]
+    \[O(\mathcal{A}) \cdot \mathcal{B} \subseteq O(\mathcal{AB}) \tag{3}\]
+    \[O(\mathcal{A}) \circ \mathcal{B} \subseteq O(\mathcal{A} \circ \mathcal{B}) \tag{4}\]
     \[O(\mathcal{A} + \mathcal{B}) \subseteq O(\mathcal{A}) + O(\mathcal{B}) \tag{5}\]
-    \[O(O(g)) \subseteq O(g) \tag{6}\]
+    \[O(O(\mathcal{A})) \subseteq O(\mathcal{A}) \tag{6}\]
 \end{theorem}
 
 \subsubsection{有趣的推论}
@@ -295,7 +297,7 @@
     所以
     \begin{align*}
         \sqrt[7]{1 + \frac{x^2 - x^3}{1 + x^3}} &= \sqrt[7]{1 + x} \circ \frac{x^2-x^3}{1+x^3}\\
-        &\in \big[1 + \frac{1}{7}x + o(x)\big] \circ \big[x^2 + o(x^2)\big]\\
+        &\in \left[1 + \frac{1}{7}x + o(x)\right] \circ \big[x^2 + o(x^2)\big]\\
         &\subseteq\footnotemark 1 + \frac{1}{7} x \circ \big[x^2 + o(x^2)\big] + o(x) \circ \big[x^2 + o(x^2)\big]\\
         &\subseteq\footnotemark 1 + \frac{1}{7}\big[x^2 + o(x^2)\big] + o(x^2)\\
         &\subseteq\footnotemark 1 + \frac{1}{7}x^2 + o(x^2)
