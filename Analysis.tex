@@ -1,0 +1,51 @@
+\documentclass{ctexart}
+
+\usepackage[x11names]{xcolor}   % 颜色
+\usepackage{amsmath, amssymb}   % 数学公式与符号
+\usepackage{hyperref}           % 超链接
+\usepackage{graphicx}           % 插图
+\usepackage{lmodern, bm}        % 额外字体、粗体样式
+\usepackage[scr]{rsfso}         % mathscr字体
+\usepackage{extarrows}          % 长等号
+\usepackage{calc}               % 支持不同单位的长度计算
+\usepackage{array}              % 表格
+\usepackage{geometry}           % 页边距
+\usepackage{amsthm}             % prove 环境
+
+\hypersetup{colorlinks = true}  % 超链接颜色
+
+\newcommand{\Pblock}[1]{\fbox{\parbox{\textwidth-28pt}{#1}}}    % 带边框的垂直盒子
+
+\makeatletter                   % 设置 “定义等号”
+\newcommand*{\defeq}{\mathrel{\rlap{%
+                    \raisebox{0.3ex}{$\m@th\cdot$}}%
+                    \raisebox{-0.3ex}{$\m@th\cdot$}}%
+                    =}
+\makeatother
+
+% 定义两个计数器：“定义” 和 “定理”
+\newcounter{definition}[subsection]
+\newcounter{subdefinition}[definition]
+\newcounter{theorem}[subsection]
+\newcounter{subtheorem}[theorem]
+
+\NewDocumentEnvironment{definition}{o}{\IfNoValueTF{#1}{\stepcounter{definition}\textbf{定义\,\thedefinition.}}{\stepcounter{definition}\textbf{定义\,\thedefinition\,(#1).}}}{\vspace{9pt}}
+\NewDocumentEnvironment{subdefinition}{o}{\IfNoValueTF{#1}{\stepcounter{subdefinition}\textbf{定义\,\thedefinition.\thesubdefinition.}}{\stepcounter{subdefinition}\textbf{定义\,\thedefinition.\thesubdefinition\,(#1).}}}{}
+
+\NewDocumentEnvironment{theorem}{o}{\IfNoValueTF{#1}{\stepcounter{theorem}\textbf{定理\,\thetheorem.}}{\stepcounter{theorem}\textbf{定理\,\thetheorem\,(#1).}}}{}
+\NewDocumentEnvironment{subtheorem}{o}{\IfNoValueTF{#1}{\stepcounter{subtheorem}\textbf{定理\,\thetheorem.\thesubtheorem.}}{\stepcounter{subtheorem}\textbf{定理\,\thetheorem.\thesubtheorem\,(#1).}}}{}
+
+\title{数学分析}
+\author{陈程}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\include{chapters/1}
+\include{chapters/2}
+\include{chapters/3}
+%\include{chapters/4}
+%\include{chapters/trail}
+\end{document}

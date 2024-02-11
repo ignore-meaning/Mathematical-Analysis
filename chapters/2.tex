@@ -1,0 +1,83 @@
+\section{准备工作}
+\subsection{广义实数}
+\begin{definition}
+    定义广义实数 $\overline{\mathbb{R}} \defeq \mathbb{R} \cup \{+\infty, -\infty\}$.\footnote{这里先不给出 $+\infty, -\infty$ 的具体性质，只要明确 $+\infty, -\infty \notin \mathbb{R}$ 且 $+\infty \neq -\infty$ 即可}
+\end{definition}\vspace{9pt}
+
+\stepcounter{definition}
+\begin{subdefinition}
+    对于实数 $a$，正实数 $\delta$，
+    \[U^\delta(a) \defeq \bigl\{x \bigm| \lvert x - a \rvert < \delta \bigr\} = (a-\delta, a+\delta)\]
+\end{subdefinition}
+
+\begin{subdefinition}
+    对于正实数 $\delta$，
+    \[U^\delta(+\infty) \defeq (\delta , +\infty)\]
+\end{subdefinition}
+
+\begin{subdefinition}
+    对于正实数 $\delta$，
+    \[U^\delta(-\infty) \defeq (-\infty, -\delta)\]
+\end{subdefinition}
+
+\begin{subdefinition}
+    对于广义实数 $a$，正实数 $\delta$，
+    \[\mathring{U}^\delta(a) \defeq U^\delta(a) \backslash \{a\}\]
+\end{subdefinition}
+
+\begin{subdefinition}
+    对于数集\footnote{实数集的子集} $E$、实数 $a$ 和正实数 $\delta$，
+    \[U_E^\delta(a) \defeq U^\delta(a) \cap E\]
+\end{subdefinition}
+
+\begin{subdefinition}
+    对于数集 $E$、实数 $a$ 和正实数 $\delta$，
+    \[\mathring{U}_E^\delta(a) \defeq \mathring{U}^\delta(a) \cap E\]
+\end{subdefinition}\vspace{9pt}
+
+\begin{definition}
+    对于数集 $E$ 和广义实数 $a$，如果
+    \[\forall \delta > 0: \mathring{U}_E^\delta(a) \neq \varnothing\]
+
+    则称 $a$ 是 数集 $E$ 的\emph{极限点}.
+\end{definition}
+
+\subsection{函数}
+\subsubsection{定义}
+\begin{definition}
+    设 $\odot$ 是实数上\footnote{该定义很容易推广，不过数学分析不会用到复数}的 $n(n \geqslant 1)$ 元运算，$f_1, f_2, \cdots, f_n$ 都是函数且 $\displaystyle \bigcap_{1 \leqslant i \leqslant n}D(f_i) \neq \varnothing$. $\odot(f_1, f_2, \cdots, f_n)$ 是由下式
+    \[D\bigl(\odot(f_1, f_2, \cdots, f_n)\bigr) = \bigcap_{1 \leqslant i \leqslant n}D(f_i)\]
+    \[\forall x \in D\bigl(\odot(f_1, f_2, \cdots, f_n)\bigr): \odot(f_1, f_2, \cdots, f_n)(x) = \odot\bigl(f_1(x), f_2(x), \cdots, f_n(x)\bigr)\]
+    所确定的函数. 因此 $\odot$ 也是函数上的 $n$ 元运算.
+\end{definition}\vspace{9pt}
+
+\begin{definition}
+    设 $\odot$ 是函数上的 $n(n \geqslant 1)$ 元运算，$\mathcal{A}_1, \mathcal{A}_2, \cdots, \mathcal{A}_n$ 都是函数集（由函数组成的集合）.
+    \[\odot(\mathcal{A}_1, \mathcal{A}_2, \cdots, \mathcal{A}_n) \defeq \bigl\{ \odot(f_1, f_2, \cdots, f_n) \bigm| f_i \in \mathcal{A}_i, i=1,2,\cdots,n\bigr\}\]
+
+    因此 $\odot$ 也是函数集上的 $n$ 元运算.
+\end{definition}\vspace{9pt}
+
+\begin{definition}
+    设 $\odot$ 是函数集上的运算，这里以二元运算为例，对于函数 $f$ 和函数集 $\mathcal{A}$，
+    \[\odot(f,\mathcal{A}) \defeq \odot(\{f\},\mathcal{A})\]
+    \[\odot(\mathcal{A},f) \defeq \odot(\mathcal{A}, \{f\})\]
+
+    因此 $\odot$ 也是函数与函数集的运算.
+\end{definition}
+
+\subsubsection{基本定理}
+\begin{theorem}
+    对于函数集 $\mathcal{A}, \mathcal{B}$，
+    \[\mathcal{A} + \mathcal{B} = \mathcal{B} + \mathcal{A}\]
+    \[\mathcal{AB} = \mathcal{BA}\]
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    对于函数集 $\mathcal{A},\mathcal{B},\mathcal{C}$，
+    \[\mathcal{A} + (\mathcal{B} + \mathcal{C}) = (\mathcal{A} + \mathcal{B}) + \mathcal{C} \tag{1}\]
+    \[\mathcal{A}(\mathcal{BC}) = (\mathcal{AB})\mathcal{C} \tag{2}\]
+    \[(\mathcal{A} + \mathcal{B}) \mathcal{C} \subseteq \mathcal{AC} + \mathcal{BC} \tag{3}\]
+    \[(\mathcal{A} + \mathcal{B}) \circ \mathcal{C} \subseteq \mathcal{A}\circ\mathcal{C} + \mathcal{B}\circ\mathcal{C} \tag{4}\]
+    \[\mathcal{A}\circ(\mathcal{B} + \mathcal{C}) \subseteq \mathcal{A} \circ \mathcal{B} + \mathcal{A} \circ \mathcal{C} \tag{5}\]
+\end{theorem}

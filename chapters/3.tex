@@ -1,0 +1,307 @@
+\section{极限}
+\subsection{数列的极限}
+\subsubsection{定义}
+\begin{definition}
+    定义域为正整数集 $\mathbb{N}^*$ 的函数被称为\emph{数列}\footnote{数列的值域未必是实数域的子集，但在数学分析中若无特别说明默认讨论的是实值函数与实值数列（值域是实数域的子集）}. 对于数列 $f$，$f(n)$ 被称为数列 $f$ 的\emph{第 $n$ 项}，如果该数列的因变量是 $x$，那么也常把 $f(n)$ 记作 $x_n$.
+
+    \textbf{补：}如果想强调某一数列（函数）的因变量，有时也用 $f_{*x}$ 来表示以 $x$ 作为因变量的数列 $f$.
+\end{definition}\vspace{9pt}
+
+\begin{definition}
+    定义 $\lim$ 是一个关系，其\d{部}\d{分}性质由下面给出：
+
+    设 $f$ 是一个数列，$(f,R) \in \lim \Rightarrow R \in \overline{\mathbb{R}}$.
+
+    对于数列 $f$，广义实数 $R$，
+    \[(f,R) \in \lim \Leftrightarrow \forall \varepsilon > 0: \exists N \in \mathbb{N}^*: \forall n \in \mathring{U}_{\mathbb{N}^*}^N(+\infty): f(n) \in U^\varepsilon(R)\]
+
+    可以证明，$\lim$ 对于数列而言是一个函数（实际上是一个泛函）\footnote{只要证明对于一个数列 $f$，$(f,R) \in \lim \wedge (f,R') \in \lim \Rightarrow R = R'$ 即可}. 对于一个数列 $f$，若 $f \in D(\lim)$，则称 $\lim(f)$ 为数列 $f$ 的\emph{极限}，如果还满足 $\lim(f) \in \mathbb{R}$，则称数列 $f$ \emph{收敛}. 若数列 $f$ 不收敛，则称它\emph{发散}.
+
+    \textbf{补：}对于数列 $f$，$\lim(f)$ 也常记作 $\displaystyle \lim_{n \rightarrow \infty} f(n)$.
+\end{definition}\vspace{9pt}
+
+\begin{definition}
+    对于数列 $f$，如果
+    \[\forall \varepsilon > 0: \exists N \in \mathbb{N}^*: \forall n,m > N: \bigl\vert f(m) - f(n)\bigr\vert < \varepsilon\]
+    则称数列 $f$ 为\emph{柯西数列}.
+\end{definition}\vspace{9pt}
+
+\begin{definition}
+    设 $f$ 是一个数列，数列 $g$ 的值域是正整数集的一个子集且 $g$ 严格递增，可以证明 $f\circ g$ 也是一个数列，称数列 $f \circ g$ 为数列 $f$ 的一个\emph{子列}.
+\end{definition}\vspace{9pt}
+
+\begin{definition}
+    如果一个数列的某个子列有极限 $A \in \overline{\mathbb{R}}$，则称 $A$ 是该数列的一个\emph{部分极限}.
+\end{definition}\vspace{9pt}
+
+\begin{definition}
+    对于数列 $f$，
+    \[\sum_{n=1}^{\infty} f(n) \defeq \lim_{n \rightarrow \infty} \sum_{i=1}^{n} f(i)\]
+\end{definition}\vspace{9pt}
+
+\begin{definition}
+    对于数列 $f$，构造数列 $g$ 满足
+    \[\forall n\in \mathbb{N}^*: g(n) = \sum_{i=1}^{n} f(i)\]
+    
+    称构造出的数列 $g$ 是数列 $f$ 的\emph{级数}或\emph{无穷级数}.
+\end{definition}\vspace{9pt}
+
+\begin{definition}
+    对于数列 $f_{*x}$，如果 $\displaystyle \sum_{n=1}^{\infty} \lvert x_n\rvert$ 是实数，那么称数列 $f$ 的级数\emph{绝对收敛}.
+\end{definition}
+
+\subsubsection{基本定理}
+\begin{theorem}
+    如果数列 $f,g$ 都收敛，则
+    \[\lim(f+g) = \lim(f) + \lim(g)\]
+    \[\lim(f \cdot g) = \lim(f) \cdot \lim(g)\]
+
+    如果还有 $\forall n \in \mathbb{N}^*: g(n) \neq 0$ 以及 $\lim(g) \neq 0$，那么
+    \[\lim(f/g) = \lim(f)/\lim(g)\]
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    对于收敛数列 $f,g$，如果 $\lim(f) < \lim(g)$，那么
+    \[\exists N \in \mathbb{N}^*: \forall n > N: f(n) < g(n)\]
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    对于收敛数列 $f,g$，如果
+    \[\forall n \in \mathbb{N}^*: f(n) \geqslant g(n)\]
+
+    那么
+    \[\lim(f) \geqslant \lim(g)\]
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    如果数列 $f,g,h$ 满足条件：$\forall n \in \mathbb{N}^*: f(n) \geqslant g(n) \geqslant h(n)$ 而且数列 $f,h$ 有相同的极限，那么数列 $g$ 的极限也存在并且 $\lim(f) = \lim(g) = \lim(h)$.
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    数列收敛的充要条件为它是柯西数列.
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    不减数列收敛的充要条件是它上有界.
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    每个数列都含有极限存在的子列.
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    数列极限存在的充要条件是它的任意子列的极限都存在.
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    一个数列的级数收敛的充分命题是该数列的级数绝对收敛.
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    设对于数列 $f$，极限 $\displaystyle \lim_{n \rightarrow \infty} \left| \frac{f(n+1)}{f(n)}\right| = \alpha$ 存在，则以下命题成立：
+
+    a) 如果 $\alpha < 1$，则 $f$ 的级数绝对收敛.
+
+    b) 如果 $\alpha > 1$，则 $f$ 的级数发散.
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    如果数列 $f$ 是非负不增数列，那么 $f$ 的级数收敛的充要条件是
+    \[\sum_{k=1}^{\infty} 2^k f(2^k)\]
+    存在且是实数.
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    \[p \in (1, +\infty) \Rightarrow \sum_{n=1}^{\infty} \frac{1}{n^p} \in \mathbb{R}\]
+    \[p \in (-\infty, 1] \Rightarrow \sum_{n=1}^{\infty} \frac{1}{n^p} = +\infty\]
+\end{theorem}
+
+\subsubsection{有趣的推论}
+\begin{theorem}
+    \[\mathrm{e} = \left(1 + \frac{1}{n}\right)^n + \frac{\theta_n}{n}\]
+    其中 $0 < \theta_n < 3$.
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    \[\mathrm{e} = 1 + \frac{1}{0!} + \frac{1}{1!} + \frac{1}{2!} + \cdots + \frac{1}{n!} + \frac{\theta_n}{n!n}\]
+    其中 $0 < \theta_n < 1$.
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    \[\mathrm{e} = \lim_{n \rightarrow \infty} \frac{n}{\sqrt[n]{n!}}\]
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    若
+    \[\forall n \in \mathbb{N}^*: y_{n+1} > y_n\]
+    \[\lim_{n \rightarrow \infty} y_n = +\infty\]
+    \[\lim_{n \rightarrow \infty} \frac{x_{n+1} - x_n}{y_{n+1} - y_n} = A \in \mathbb{R}\]
+
+    那么
+    \[\lim_{n \rightarrow \infty} \frac{x_n}{y_n} = A\]
+\end{theorem}
+
+\subsection{函数的极限}
+\subsubsection{定义}
+\begin{definition}
+    对于函数 $f$ 和数集 $E$，$f|_E$ 被称为函数 $f$ 在集合 $E$ 上的\emph{限制}，是由以下各式
+    \[D(f|_E) = D(f) \cap E \neq \varnothing\]
+    \[\forall x \in D(f|_E): f|_E(x) = f(x)\]
+    所确定的函数.
+\end{definition}\vspace{9pt}
+
+\begin{definition}
+    $\lim$ 的\d{部}\d{分}性质由下面给出：
+    
+    设 $a$ 是函数 $f$ 定义域的一个极限点，$\bigl((f,a),R\bigr) \in \lim \Rightarrow R \in \overline{\mathbb{R}}$.
+
+    设 $a$ 是函数 $f$ 定义域 $E$ 的一个极限点，$R \in \overline{\mathbb{R}}$，
+    \[\bigl((f,a),R\bigr) \in \lim \Leftrightarrow \forall \varepsilon > 0: \exists \delta > 0: \forall x \in \mathring{U}_E^\delta(a): f(x) \in U^\varepsilon(R)\]
+
+    同样可以证明，$\lim$ 对于函数与函数定义域的极限点所组成的序偶也是一个函数. 对于一个函数 $f$ 和其定义域的极限点 $a$，若 $(f,a) \in D(\lim)$，则称 $\lim(f,a)$ 为函数 $f$ 在 $a$ 处的\emph{极限}.
+
+    \textbf{补：}对于函数 $f$ 和 $f$ 定义域的极限点 $a$，$\lim(f,a)$ 也常记作 $\displaystyle \lim_{x \rightarrow a} f(x)$.
+
+    \textbf{补：}对于函数 $f$ 和 $f$ 定义域的有限极限点 $a \in \mathbb{R}$，$\lim(f|_{(a,+\infty)},a)$（如果存在的话）也常记作 $\lim(f,a^+)$ 或 $\displaystyle \lim_{x \rightarrow a^+} f(x)$. 类似地定义 $\lim(f,a^-)$ 和 $\displaystyle \lim_{x \rightarrow a^-} f(x)$.
+\end{definition}\vspace{9pt}
+
+\begin{definition}
+    对于在数集 $E$ 上有定义的函数 $f$，称
+    \[\omega(f;E) \defeq \sup_{x',x'' \in E} \bigl(f(x') - f(x'')\bigr) \defeq \sup \bigl\{f(x') - f(x'') \bigm| x',x'' \in E\bigr\}\]
+    为函数 $f$ 在 $E$ 上的\emph{振幅}.
+\end{definition}\vspace{9pt}
+
+\begin{definition}
+    对于函数 $f$ 和函数定义域的一个极限点 $a$，$\omega(f;a)$ 被称为函数 $f$ 在 $a$ 处的\emph{振幅}（不一定存在），$\omega(f;a)$ 的定义见下：
+
+    如果 $a \in \mathbb{R}$
+    \[\omega(f;a) \defeq \lim_{\delta \rightarrow 0^+} \omega(f;U_{D(f)}^\delta)\]
+    
+    如果 $a \in \{+\infty, -\infty\}$
+    \[\omega(f;a) \defeq \lim_{\delta \rightarrow +\infty} \omega(f;U_{D(f)}^\delta)\]
+\end{definition}\vspace{9pt}
+
+\stepcounter{definition}
+\begin{subdefinition}
+    对于函数 $g$ 和 $D(g)$ 的一个极限点 $a$，$\underset{x \rightarrow a}{o(g)}$ 是满足下列性质
+    \[\lim_{x \rightarrow a} \frac{f(x)}{g(x)} = 0\]
+    的函数 $f$ 所组成的集合. 
+\end{subdefinition}
+
+\begin{subdefinition}
+    对于函数集 $\mathcal{A}$ 和广义实数 $a$，
+    \[\underset{x \rightarrow a}{o(\mathcal{A})} \defeq \bigcup_{g \in \mathcal{A}}\underset{x \rightarrow a}{o(g)}\]
+\end{subdefinition}\vspace{9pt}
+
+\stepcounter{definition}
+\begin{subdefinition}
+    对于函数 $g$ 和 $D(g)$ 的一个极限点 $a$，$\underset{x \rightarrow a}{O(g)}$ 是满足下列性质
+    \[\exists \delta,M > 0: \forall x \in \mathring{U}_{D(g)}^\delta(a): \left|\frac{f(x)}{g(x)}\right| < M\]
+    的函数 $f$ 所组成的集合.
+\end{subdefinition}
+
+\begin{subdefinition}
+    对于函数集 $\mathcal{A}$ 和广义实数 $a$，
+    \[\underset{x \rightarrow a}{O(\mathcal{A})} \defeq \bigcup_{g \in \mathcal{A}} \underset{x \rightarrow a}{O(g)}\]
+\end{subdefinition}\vspace{9pt}
+
+\begin{definition}
+    对于拥有相同定义域的函数 $f,g$ 和广义实数 $R$，如果
+    \[\lim_{x \rightarrow R} \frac{f(x)}{g(x)} = 1\]
+    则称函数 $f$ 在趋近于 $R$ 时等价于函数 $g$，记作 $f \overset{x \rightarrow R}{\sim} g$ 或简记为 $f \sim g$.
+\end{definition}
+
+\subsubsection{基本定理}
+\begin{theorem}
+    如果函数 $f,g$ 具有相同的定义域，而且 $\lim(f,a) = A \in \mathbb{R}, \lim(g,a) = B \in \mathbb{R}$，那么
+    \[\lim(f+g,a) = A + B\]
+    \[\lim(f \cdot g, a) = A \cdot B\]
+    
+    如果还有 $\forall x \in D(g): g(x) \neq 0$ 以及 $B \neq 0$，那么
+    \[\lim(f/g,a) = \frac{A}{B}\]
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    若函数 $f,g$ 拥有相同的定义域 $E$ 并且 $\lim(f,a) < \lim(g,a)$，那么
+    \[\exists \delta > 0: \forall x \in \mathring{U}_E^\delta(a): f(x) < g(x)\]
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    对于拥有相同定义域 $E$ 的函数 $f,g$ 和 $E$ 的一个极限点 $a$，如果两个函数在 $a$ 处的极限存在并且
+    \[\exists \delta > 0: \forall x \in \mathring{U}_E^\delta(a): f(x) \leqslant g(x)\]
+
+    那么
+    \[\lim(f,a) \leqslant \lim(g,a)\]
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    对于函数 $f$ 和 $D(f)$ 的一个极限点 $a$，函数 $f$ 在 $a$ 处的极限存在且是实数当且仅当
+    \[\forall \varepsilon > 0: \exists \delta > 0: \omega(f,\mathring{U}_{D(f)}^\delta) < \varepsilon\]
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    设 $f$ 是 $X$ 到 $Y \subseteq \mathbb{R}$ 的映射，$g$ 是 $Y$ 到 $\mathbb{R}$ 的映射，
+    \[\lim(g \circ f,a) = \lim\bigl(g, \lim(f,a)\bigr)\]
+    成立的充分条件是（在这些极限都存在的情况下考虑）
+    \[\exists \delta > 0: \forall x \in \mathring{U}_X^\delta: f(x) \neq \lim(f,a)\]
+    或者
+    \[a \in \mathbb{R} \wedge \omega\bigl(g;\lim(f,a)\bigr) = 0\]
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    对于定义域为 $E$ 的不减函数 $f$，$f$ 在 $\sup E$ 处存在有限的极限的充要条件是函数 $f$ 有上界.
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    \[Ao(\mathcal{A}) = o(\mathcal{A}) \quad (A \neq 0) \tag{1}\]
+    \[o(\mathcal{A}) \pm o(\mathcal{A}) \subseteq o(\mathcal{A}) \tag{2}\]
+    \[o(\mathcal{A}) \cdot \mathcal{B} \subseteq o(\mathcal{AB}) \tag{3}\]
+    \[o(\mathcal{A}) \circ \mathcal{B} \subseteq o(\mathcal{A} \circ \mathcal{B}) \tag{4}\]
+    \[o(\mathcal{A} + \mathcal{B}) \subseteq o(\mathcal{A}) + o(\mathcal{B}) \tag{5}\]
+    \[o(o(\mathcal{A})) \subseteq o(\mathcal{A}) \tag{6}\]
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    \[O(f) = AO(f) \quad (A \neq 0) \tag{1}\]
+    \[O(f) \pm O(f) \subseteq O(f) \tag{2}\]
+    \[\mathcal{A} \cdot O(f) \subseteq O(\mathcal{A} \cdot f) \tag{3}\]
+    \[O(f) \circ \mathcal{A} \subseteq O(f \circ \mathcal{A}) \tag{4}\]
+    \[O(\mathcal{A} + \mathcal{B}) \subseteq O(\mathcal{A}) + O(\mathcal{B}) \tag{5}\]
+    \[O(O(g)) \subseteq O(g) \tag{6}\]
+\end{theorem}
+
+\subsubsection{有趣的推论}
+\begin{theorem}
+    \[o(x^m) \circ \bigl[Ax^n + o(x^n)\bigr] \subseteq o(x^{mn}) \tag{1}\]
+    \[x^m \circ \bigl[Ax^n + o(x^n)\bigr] \subseteq Ax^{mn} + o(x^{mn}) \tag{2}\]
+    
+    特别地，
+    \[\bigl[P_n(x) + o(x^n)\bigr] \circ \bigl[Q_m(x) + o(x^m)\bigr] \subseteq \big[P_n(x) \circ Q_n(x)\big] + \big[o(x^n) + o(x^m)\big] \tag{3}\]
+\end{theorem}
+
+\subsubsection{例题}
+\textbf{1.} 求极限
+\[\lim_{x \rightarrow 0} \frac{\displaystyle \sqrt[7]{1 + \frac{x^2 - x^3}{1 + x^3}} - \cos x}{x^2}\]
+\begin{proof}[解]
+    已知当 $x \rightarrow 0$ 时
+    \[\sqrt[7]{1 + x} \in 1 + \frac{1}{7}x + o(x)\]
+    \[\frac{x^2-x^3}{1+x^3} \in x^2 + o(x^2)\]
+    \[\cos x \in 1 - \frac{1}{2}x^2 + o(x^2)\]
+
+    所以
+    \begin{align*}
+        \sqrt[7]{1 + \frac{x^2 - x^3}{1 + x^3}} &= \sqrt[7]{1 + x} \circ \frac{x^2-x^3}{1+x^3}\\
+        &\in \big[1 + \frac{1}{7}x + o(x)\big] \circ \big[x^2 + o(x^2)\big]\\
+        &\subseteq\footnotemark 1 + \frac{1}{7} x \circ \big[x^2 + o(x^2)\big] + o(x) \circ \big[x^2 + o(x^2)\big]\\
+        &\subseteq\footnotemark 1 + \frac{1}{7}\big[x^2 + o(x^2)\big] + o(x^2)\\
+        &\subseteq\footnotemark 1 + \frac{1}{7}x^2 + o(x^2)
+    \end{align*}
+    \[\sqrt[7]{1 + \frac{x^2 - x^3}{1 + x^3}} - \cos x \in \left[1 + \frac{1}{7}x^2 + o(x^2)\right] - \left[1 - \frac{1}{2}x^2 + o(x^2)\right] \subseteq \frac{9}{14}x^2 + o(x^2)\]
+    \[\frac{\displaystyle \sqrt[7]{1 + \frac{x^2 - x^3}{1 + x^3}} - \cos x}{x^2} \in \frac{\displaystyle \frac{9}{14}x^2 + o(x^2)}{x^2} \subseteq \frac{9}{14} + o(1)\]
+
+    从而
+    \[\lim_{x \rightarrow 0} \frac{\displaystyle \sqrt[7]{1 + \frac{x^2 - x^3}{1 + x^3}} - \cos x}{x^2} = \frac{9}{14}\]
+    \footnotetext[6]{根据 2.2.2 节定理 2 式 $(4)$}
+    \footnotetext[7]{根据 3.2.3 节定理 9 式 $(1),(2)$}
+    \footnotetext[8]{根据 3.2.2 节定理 7 式 $(1),(2)$}
+\end{proof}
