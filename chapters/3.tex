@@ -52,7 +52,7 @@
 
 \subsubsection{基本定理}
 \begin{theorem}
-    如果数列 $f,g$ 都收敛，则
+    对于收敛数列 $f,g$，
     \[\lim(f+g) = \lim(f) + \lim(g)\]
     \[\lim(f \cdot g) = \lim(f) \cdot \lim(g)\]
 
@@ -67,14 +67,18 @@
 
 \begin{theorem}
     对于收敛数列 $f,g$，如果
-    \[\forall n \in \mathbb{N}^*: f(n) \geqslant g(n)\]
+    \[\exists n \in \mathbb{N}^*: \forall n > N: f(n) \geqslant g(n)\]
 
     那么
     \[\lim(f) \geqslant \lim(g)\]
 \end{theorem}\vspace{9pt}
 
 \begin{theorem}
-    如果数列 $f,g,h$ 满足条件：$\forall n \in \mathbb{N}^*: f(n) \geqslant g(n) \geqslant h(n)$ 而且数列 $f,h$ 有相同的极限，那么数列 $g$ 的极限也存在并且 $\lim(f) = \lim(g) = \lim(h)$.
+    设数列 $f,g,h$ 满足
+    \[\exists n \in \mathbb{N}^*: \forall n > N: f(n) \geqslant g(n) \geqslant h(n)\]
+    \[\lim(f) = \lim(h)\]
+    
+    那么数列 $g$ 的极限也存在并且 $\lim(f) = \lim(g) = \lim(h)$.
 \end{theorem}\vspace{9pt}
 
 \begin{theorem}
@@ -94,7 +98,7 @@
 \end{theorem}\vspace{9pt}
 
 \begin{theorem}
-    一个数列的级数收敛的充分命题是该数列的级数绝对收敛.
+    一个数列的级数收敛的充分条件是该数列的级数绝对收敛.
 \end{theorem}\vspace{9pt}
 
 \begin{theorem}
