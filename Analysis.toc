@@ -14,3 +14,6 @@
 \contentsline {subsubsection}{\numberline {3.2.2}基本定理}{11}{subsubsection.3.2.2}%
 \contentsline {subsubsection}{\numberline {3.2.3}有趣的推论}{13}{subsubsection.3.2.3}%
 \contentsline {subsubsection}{\numberline {3.2.4}例题}{13}{subsubsection.3.2.4}%
+\contentsline {section}{\numberline {4}连续函数}{15}{section.4}%
+\contentsline {subsection}{\numberline {4.1}定义}{15}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}基本定理}{15}{subsection.4.2}%
