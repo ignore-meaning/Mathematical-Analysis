@@ -1,11 +1,11 @@
 \section{连续函数}
 \subsection{定义}
 \begin{definition}
-    对于定义域为 $E$ 的函数 $f$ 和 $E$ 上的一个极限点 $a \in E$，如果
+    对于定义域为 $E$ 的函数 $f$ 和 $E$ 的一个极限点 $a \in \mathbb{R}$，如果
     \[\lim_{x \rightarrow a} f(x) = f(a)\]
     \[\lim_{x \rightarrow a^-} f(x) = f(a)\]
     \[\lim_{x \rightarrow a^+} f(x) = f(a)\]
-    则分别称函数 $f$ 在 $a$ 处\emph{连续}，\emph{左连续}，\emph{右连续}（左右连续只考虑 $a \in \mathbb{R}$ 的情况）.
+    则分别称函数 $f$ 在 $a$ 处\emph{连续}，\emph{左连续}，\emph{右连续}.
 \end{definition}\vspace{9pt}
 
 \begin{definition}
@@ -19,7 +19,26 @@
 \begin{definition}
     如果函数 $f$ 在 $a$ 处不连续，则称 $a$ 是函数 $f$ 的\emph{间断点}.
 
-    对于函数 $f$ 的间断点 $a$，如果 $\lim(f,a)$ 存在，则称 $a$ 是函数 $f$ 的\emph{可去间断点}，否则称 $a$ 是函数 $f$ 的\emph{不可去间断点}.
+    对于函数 $f$ 的间断点 $a$，如果 $\lim(f,a)$ 存在，则称 $a$ 是函数 $f$ 的\emph{可去间断点}.
+\end{definition}\vspace{9pt}
+
+\stepcounter{definition}
+\begin{subdefinition}
+    如果函数 $f$ 在 $a$ 处不连续但极限
+    \[\lim_{x \rightarrow a^-} f(x),\quad \lim_{x \rightarrow a^+}f(x)\]
+    都存在，则称 $a$ 是函数 $f$ 的\emph{第一类间断点}.
+\end{subdefinition}
+
+\begin{subdefinition}
+    如果函数 $f$ 在 $a$ 处不连续但极限
+    \[\lim_{x \rightarrow a^-}f(x), \quad \lim_{x \rightarrow a^+}f(x)\]
+    至少有一个不存在，则称 $a$ 是函数 $f$ 的\emph{第二类间断点}.
+\end{subdefinition}\vspace{9pt}
+
+\begin{definition}
+    对于函数 $f$ 与 数集 $E$，如果
+    \[\forall \varepsilon > 0: \exists \delta > 0: \forall x', x'' \bigl(\lvert x' - x''\rvert < \delta\bigr): \lvert f(x') - f(x'')\rvert < \varepsilon\]
+    那么称函数 $f$ 在数集 $E$ 上\emph{一致连续}.
 \end{definition}
 
 \subsection{基本定理}
@@ -28,5 +47,32 @@
 \end{theorem}\vspace{9pt}
 
 \begin{theorem}
+    设 $f:X \rightarrow Y, g:Y \rightarrow \mathbb{R}$，如果 $f$ 在 $a \in \mathbb{R}$ 处连续而且 $g$ 在 $f(a)$ 处连续，则 $g \circ f$ 在 $a$ 处连续.
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
     设函数 $f$ 在闭区间 $E = [a,b]$ 上有定义且连续，如果 $f(a)f(b) < 0$，那么存在 $\xi \in E$ 使得 $f(\xi) = 0$.
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    在闭区间上连续的函数在该区间上有界. 闭区间上的连续函数取得到最大值也取得到最小值.
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    在闭区间上连续的函数也在该区间上一致连续.
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    连续函数的反函数（如果存在的话）也连续.
+\end{theorem}
+
+\subsection{有趣的推论}
+\begin{theorem}
+    如果 $a$ 是单调函数 $f$ 的间断点且 $a$ 不是函数 $f$ 定义域的端点，则极限
+    \[\lim_{x \rightarrow a^-}f(x), \quad \lim_{x \rightarrow a^+}f(x)\]
+    至少有一个存在.
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    单调函数的间断点的集合至多可数.
 \end{theorem}
