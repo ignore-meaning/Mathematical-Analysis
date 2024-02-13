@@ -10,7 +10,7 @@
 \begin{definition}
     定义 $\lim$ 是一个关系，其\d{部}\d{分}性质由下面给出：
 
-    设 $f$ 是一个数列，$(f,R) \in \lim \Rightarrow R \in \overline{\mathbb{R}}$.
+    对于函数 $f$，$(f,R) \in \lim \Rightarrow R \in \overline{\mathbb{R}}$.
 
     对于数列 $f$，广义实数 $R$，
     \[(f,R) \in \lim \Leftrightarrow \forall \varepsilon > 0: \exists N \in \mathbb{N}^*: \forall n > N: f(n) \in U^\varepsilon(R)\]
@@ -157,16 +157,16 @@
 \begin{definition}
     $\lim$ 的\d{部}\d{分}性质由下面给出：
     
-    对于函数 $f$ 和其定义域的极限点 $a$，$\bigl((f,a),R\bigr) \in \lim \Rightarrow R \in \overline{\mathbb{R}}$.
+    对于函数 $f$ 和广义实数 $a$，如果 $\bigl((f,a),R\bigr) \in \lim$，那么 $a$ 是函数 $f$ 定义域的极限点，$R \in \overline{\mathbb{R}}$.
 
     对于函数 $f$ 和其定义域 $E$ 的极限点 $a$，广义实数 $R$，
     \[\bigl((f,a),R\bigr) \in \lim \Leftrightarrow \forall \varepsilon > 0: \exists \delta > 0: \forall x \in \mathring{U}_E^\delta(a): f(x) \in U^\varepsilon(R)\]
 
-    同样可以证明，$\lim$ 对于函数与函数定义域的极限点所组成的序偶也是一个函数. 对于一个函数 $f$ 和其定义域的极限点 $a$，若 $(f,a) \in D(\lim)$，则称 $\lim(f,a)$ 为函数 $f$ 在 $a$ 处的\emph{极限}.
+    同样可以证明，$\lim$ 对于函数与广义实数所组成的序偶也是一个函数. 对于函数 $f$ 和广义实数 $a$，若 $(f,a) \in D(\lim)$，则称 $\lim(f,a)$ 为函数 $f$ 在 $a$ 处的\emph{极限}.
 
-    \textbf{补：}对于函数 $f$ 和 $f$ 定义域的极限点 $a$，$\lim(f,a)$ 也常记作 $\displaystyle \lim_{x \rightarrow a} f(x)$.
+    \textbf{补：}对于函数 $f$ 和 广义实数 $a$，$\lim(f,a)$ 也常记作 $\displaystyle \lim_{x \rightarrow a} f(x)$.
 
-    \textbf{补：}对于函数 $f$ 和 $f$ 定义域的有限极限点 $a \in \mathbb{R}$，$\lim(f|_{(a,+\infty)},a)$（如果存在的话）也常记作 $\lim(f,a^+)$ 或 $\displaystyle \lim_{x \rightarrow a^+} f(x)$. 类似地定义 $\lim(f,a^-)$ 和 $\displaystyle \lim_{x \rightarrow a^-} f(x)$.
+    \textbf{补：}对于函数 $f$ 和 实数 $a$，$\lim(f|_{(a,+\infty)},a)$ 也常记作 $\lim(f,a^+)$ 或 $\displaystyle \lim_{x \rightarrow a^+} f(x)$. 类似地定义 $\lim(f,a^-)$ 和 $\displaystyle \lim_{x \rightarrow a^-} f(x)$.
 \end{definition}\vspace{9pt}
 
 \begin{definition}
@@ -176,20 +176,16 @@
 \end{definition}\vspace{9pt}
 
 \begin{definition}
-    对于函数 $f$ 和函数定义域的一个极限点 $a$，$\omega(f;a)$ 被称为函数 $f$ 在 $a$ 处的\emph{振幅}（不一定存在），$\omega(f;a)$ 的定义见下：
-
-    如果 $a \in \mathbb{R}$
+    对于函数 $f$ 和实数 $a$，如果 $a$ 是 $D(f)$ 的极限点，则
     \[\omega(f;a) \defeq \lim_{\delta \rightarrow 0^+} \omega(f;U_{D(f)}^\delta)\]
-    
-    如果 $a \in \{+\infty, -\infty\}$
-    \[\omega(f;a) \defeq \lim_{\delta \rightarrow +\infty} \omega(f;U_{D(f)}^\delta)\]
+    被称为函数 $f$ 在 $a$ 处的\emph{振幅}.
 \end{definition}\vspace{9pt}
 
 \stepcounter{definition}
 \begin{subdefinition}
-    对于函数 $g$ 和 $D(g)$ 的一个极限点 $a$，$\underset{x \rightarrow a}{o(g)}$ 是满足下列性质
+    对于函数 $g$ 和 广义实数 $a$，$\underset{x \rightarrow a}{o(g)}$ 是所有满足下列性质
     \[\lim_{x \rightarrow a} \frac{f(x)}{g(x)} = 0\]
-    的函数 $f$ 所组成的集合. 
+    的函数 $f$ 所组成的集合，在已明确 $a$ 的值的情况下也可以简写为 $o(g)$. 
 \end{subdefinition}
 
 \begin{subdefinition}
@@ -199,9 +195,9 @@
 
 \stepcounter{definition}
 \begin{subdefinition}
-    对于函数 $g$ 和 $D(g)$ 的一个极限点 $a$，$\underset{x \rightarrow a}{O(g)}$ 是满足下列性质
+    对于函数 $g$ 和 广义实数 $a$，$\underset{x \rightarrow a}{O(g)}$ 是所有满足下列性质
     \[\exists \delta,M > 0: \forall x \in \mathring{U}_{D(g)}^\delta(a): \left|\frac{f(x)}{g(x)}\right| < M\]
-    的函数 $f$ 所组成的集合.
+    的函数 $f$ 所组成的集合，在已明确 $a$ 的值的情况下也可以简写为 $o(g)$.
 \end{subdefinition}
 
 \begin{subdefinition}
@@ -210,19 +206,19 @@
 \end{subdefinition}\vspace{9pt}
 
 \begin{definition}
-    对于拥有相同定义域的函数 $f,g$ 和广义实数 $R$，如果
-    \[\lim_{x \rightarrow R} \frac{f(x)}{g(x)} = 1\]
+    对于函数 $f,g$ 和广义实数 $R$，如果
+    \[\lim(f/g,R) = 1\]
     则称函数 $f$ 在趋近于 $R$ 时等价于函数 $g$，记作 $f \overset{x \rightarrow R}{\sim} g$ 或简记为 $f \sim g$.
 \end{definition}
 
 \subsubsection{基本定理}
 \begin{theorem}
-    如果函数 $f,g$ 具有相同的定义域，而且 $\lim(f,a) = A \in \mathbb{R}, \lim(g,a) = B \in \mathbb{R}$，那么
-    \[\lim(f+g,a) = A + B\]
-    \[\lim(f \cdot g, a) = A \cdot B\]
+    设 $f,g$ 在 $a \in \overline{\mathbb{R}}$ 处的极限都存在且是实数，$a$ 是 $D(f) \cap D(g)$ 的极限点，有
+    \[\lim(f+g,a) = \lim(f,a) + \lim(g,a)\]
+    \[\lim(f \cdot g, a) = \lim(f,a) \cdot \lim(g,a)\]
     
-    如果还有 $\forall x \in D(g): g(x) \neq 0$ 以及 $B \neq 0$，那么
-    \[\lim(f/g,a) = \frac{A}{B}\]
+    如果还有 $a$ 是 $D(f/g)$ 的极限点而且 $\lim(g,a) \neq 0$，那么
+    \[\lim(f/g,a) = \frac{\lim(f,a)}{\lim(g,a)}\]
 \end{theorem}\vspace{9pt}
 
 \begin{theorem}
