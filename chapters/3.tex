@@ -222,12 +222,12 @@
 \end{theorem}\vspace{9pt}
 
 \begin{theorem}
-    若函数 $f,g$ 拥有相同的定义域 $E$ 并且 $\lim(f,a) < \lim(g,a)$，那么
+    对于函数 $f,g$ 和广义实数 $a$，如果 $\lim(f,a) < \lim(g,a)$，那么令 $E = D(f) \cap D(g)$ 便有
     \[\exists \delta > 0: \forall x \in \mathring{U}_E^\delta(a): f(x) < g(x)\]
 \end{theorem}\vspace{9pt}
 
 \begin{theorem}
-    对于拥有相同定义域 $E$ 的函数 $f,g$ 和 $E$ 的一个极限点 $a$，如果两个函数在 $a$ 处的极限存在并且
+    对于函数 $f,g$ 和 广义实数 $a$，如果两个函数在 $a$ 处的极限存在并且令 $E = D(f) \cap D(g)$ 便有
     \[\exists \delta > 0: \forall x \in \mathring{U}_E^\delta(a): f(x) \leqslant g(x)\]
 
     那么
@@ -236,7 +236,7 @@
 
 \begin{theorem}
     对于函数 $f$ 和 $D(f)$ 的一个极限点 $a$，函数 $f$ 在 $a$ 处的极限存在且是实数当且仅当
-    \[\forall \varepsilon > 0: \exists \delta > 0: \omega(f,\mathring{U}_{D(f)}^\delta) < \varepsilon\]
+    \[\forall \varepsilon > 0: \exists \delta > 0: \omega\Bigl(f,\mathring{U}_{D(f)}^\delta\Bigr) < \varepsilon\]
 \end{theorem}\vspace{9pt}
 
 \begin{theorem}
@@ -245,7 +245,7 @@
     成立的充分条件是（在这些极限都存在的情况下考虑）
     \[\exists \delta > 0: \forall x \in \mathring{U}_X^\delta: f(x) \neq \lim(f,a)\]
     或者
-    \[a \in \mathbb{R} \wedge \omega\bigl(g;\lim(f,a)\bigr) = 0\]
+    \[\lim(f,a) \in \mathbb{R} \wedge \omega\bigl(g;\lim(f,a)\bigr) = 0\]
 \end{theorem}\vspace{9pt}
 
 \begin{theorem}
@@ -274,6 +274,7 @@
 
 \subsubsection{有趣的推论}
 \begin{theorem}
+    当 $x \rightarrow 0$ 时，
     \[o(x^m) \circ \bigl[Ax^n + o(x^n)\bigr] \subseteq o(x^{mn}) \tag{1}\]
     \[x^m \circ \bigl[Ax^n + o(x^n)\bigr] \subseteq Ax^{mn} + o(x^{mn}) \tag{2}\]
     

@@ -1,7 +1,7 @@
 \section{连续函数}
 \subsection{定义}
 \begin{definition}
-    对于定义域为 $E$ 的函数 $f$ 和 $E$ 的一个极限点 $a \in \mathbb{R}$，如果
+    对于函数 $f$ 和 实数 $a$，如果
     \[\lim_{x \rightarrow a} f(x) = f(a)\]
     \[\lim_{x \rightarrow a^-} f(x) = f(a)\]
     \[\lim_{x \rightarrow a^+} f(x) = f(a)\]
@@ -37,17 +37,17 @@
 
 \begin{definition}
     对于函数 $f$ 与 数集 $E$，如果
-    \[\forall \varepsilon > 0: \exists \delta > 0: \forall x', x'' \bigl(\lvert x' - x''\rvert < \delta\bigr): \lvert f(x') - f(x'')\rvert < \varepsilon\]
+    \[\forall \varepsilon > 0: \exists \delta > 0: \forall x', x'' \bigl(\lvert x' - x''\rvert < \delta\bigr): \bigl| f(x') - f(x'')\bigr| < \varepsilon\]
     那么称函数 $f$ 在数集 $E$ 上\emph{一致连续}.
 \end{definition}
 
 \subsection{基本定理}
 \begin{theorem}
-    对于拥有相同定义域的函数 $f,g$，如果两个函数都在 $a$ 处连续，则 $f+g$、$f \cdot g$ 以及 $f/g$（当然要 $g(a) \neq 0$）也都在 $a$ 处连续.
+    设函数 $f,g$ 在 $a$ 处连续，如果 $a$ 是 $D(f) \cap D(g)$ 的极限点，则 $f+g$、$f \cdot g$ 也在 $a$ 处连续. 如果还有 $a$ 是 $D(f/g)$ 的极限点，$g(a) \neq 0$，那么 $f/g$ 也在 $a$ 处连续.
 \end{theorem}\vspace{9pt}
 
 \begin{theorem}
-    设 $f:X \rightarrow Y, g:Y \rightarrow \mathbb{R}$，如果 $f$ 在 $a \in \mathbb{R}$ 处连续而且 $g$ 在 $f(a)$ 处连续，则 $g \circ f$ 在 $a$ 处连续.
+    设 $f:X \rightarrow Y, g:Y \rightarrow \mathbb{R}$，如果 $f$ 在 $a$ 处连续而且 $g$ 在 $f(a)$ 处连续，则 $g \circ f$ 在 $a$ 处连续.
 \end{theorem}\vspace{9pt}
 
 \begin{theorem}
