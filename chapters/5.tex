@@ -1,8 +1,44 @@
 \section{微分学}
-\subsection{可微函数}
-\subsubsection{定义}
+\subsection{定义}
 \begin{definition}
     对于函数 $f$ 和实数 $a$，
     \[f'(a) \defeq \lim_{x \rightarrow a} \frac{f(x)-f(a)}{x-a}\]
-    被称为函数 $f$ 在 $a$ 处的\emph{导数}.
+    被称为函数 $f$ 在 $a$ 处的\emph{一阶导数}或简称为\emph{导数}. 如果 $f'(a)$ 存在，则称函数 $f$ 在 $a$ 处\emph{一阶可导}或\emph{可导}.
+\end{definition}\vspace{9pt}
+
+\begin{definition}
+    请假装这里定义了高阶导数，谢谢.
+\end{definition}\vspace{9pt}
+
+\begin{definition}
+    对于函数 $f$ 和数集 $E$，如果函数 $f$ 在 $E$ 上有定义而且在 $E$ 上任意一点都 $n(n \geqslant 1)$ 阶可导，则称
 \end{definition}
+
+\begin{definition}
+    对于函数 $f$ 和实数 $x_0$，如果 $x_0$ 是 $E = D(f)$ 上的极限点，而且
+    \[\exists \delta > 0: \forall x \in \mathring{U}_E^\delta(x_0): f(x) \leqslant f(x_0)\]
+    
+    则称 $x_0$ 是函数 $f$ 的\emph{极大值点}，$f(x_0)$ 是函数 $f$ 的\emph{极大值}. 类似地定义\emph{极小值点}与\emph{极小值}. 极大值点与极小值点统称为\emph{极值点}，极大值与极小值统称为\emph{极值}.
+\end{definition}\vspace{9pt}
+
+\begin{definition}
+    对于函数 $f$ 的极值点 $x_0$，如果 $x_0$ 既是 $(x_0, +\infty) \cap D(f)$ 的极限点，又是 $(-\infty, x_0) \cap D(f)$ 的极限点，则称 $x_0$ 为函数 $f$ 的\emph{内极值点}.
+\end{definition}
+
+\subsection{基本定理}
+\begin{theorem}
+    对于函数 $f,g$，
+    \[(f+g)' = f' + g'\]
+    \[(fg)' = f'g + fg'\]
+    \[(f/g)' = \frac{f'g - fg'}{g^2}\]
+    \[(g \circ f)' = (g'\circ f) \cdot f'\]
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    设函数 $f$ 在内极值点 $x_0$ 处可导，则 $f'(x_0) = 0$.
+\end{theorem}\vspace{9pt}
+
+\begin{theorem}
+    如果函数 $f$ 在闭区间 $[a,b]$ 上有定义且连续，在开区间 $(a,b)$ 上可导，并且 $f(a) = f(b)$，则
+    \[\exists \xi \in (a,b): f'(\xi) = 0\]
+\end{theorem}\vspace{9pt}

@@ -18,5 +18,5 @@
 \contentsline {subsection}{\numberline {3.2}基本定理}{16}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}有趣的推论}{16}{subsection.3.3}%
 \contentsline {section}{\numberline {4}微分学}{17}{section.4}%
-\contentsline {subsection}{\numberline {4.1}可微函数}{17}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}定义}{17}{subsubsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1}定义}{17}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}基本定理}{17}{subsection.4.2}%
