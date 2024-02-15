@@ -1,17 +1,24 @@
 \section{微分学}
 \subsection{定义}
 \begin{definition}
-    对于函数 $f$ 和实数 $a$，
-    \[f'(a) \defeq \lim_{x \rightarrow a} \frac{f(x)-f(a)}{x-a}\]
-    被称为函数 $f$ 在 $a$ 处的\emph{一阶导数}或简称为\emph{导数}. 如果 $f'(a)$ 存在，则称函数 $f$ 在 $a$ 处\emph{一阶可导}或\emph{可导}.
+    对于函数 $f$，$\Bigl(f^{(1)}\Bigr)$ 是由下式
+    \[x \in D\Bigl(f^{(1)}\Bigr) \Leftrightarrow \lim(f,x) \in \mathbb{R} \wedge x \in \mathbb{R}\]
+    \[\forall x \in D\Bigl(f^{(1)}\Bigr): f^{(1)}(x) = \lim(f,x)\]
+    所确定的函数，被称为函数 $f$ 的\emph{一阶导函数}或简称为\emph{导函数}. 如果 $x \in D\Bigl(f^{(1)}\Bigr)$，则称函数 $f$ 在 $x$ 处\emph{一阶可导}或简称为\emph{可导}.
+\end{definition}
+
+\begin{definition}
+    对于函数 $f$ 和正整数 $n$，
+    \[f^{(n+1)} \defeq \Bigl(f^{(n)}\Bigr)'\]
+    被称为函数 $f$ 的 $n+1$ 阶导函数. 如果 $x \in D\Bigl(f^{(n+1)}\Bigr)$，则称函数 $f$ 在 $x$ 处 \emph{$n+1$ 阶可导}.
 \end{definition}\vspace{9pt}
 
 \begin{definition}
-    请假装这里定义了高阶导数，谢谢.
+    对于函数 $f$ 和数集 $E$，如果函数 $f$ 在 $E$ 上有定义而且在 $E$ 上任意一点都 $n(n \geqslant 1)$ 阶可导，则称函数 $f$ 在 $E$ 上 $n$ 阶可导.
 \end{definition}\vspace{9pt}
 
 \begin{definition}
-    对于函数 $f$ 和数集 $E$，如果函数 $f$ 在 $E$ 上有定义而且在 $E$ 上任意一点都 $n(n \geqslant 1)$ 阶可导，则称
+    对于数集 $E$ 和正整数 $n$，$C^n(E)$ 表示所有在数集 $E$ 上 $n$ 阶可导的函数所组成的集合.
 \end{definition}
 
 \begin{definition}
@@ -23,6 +30,12 @@
 
 \begin{definition}
     对于函数 $f$ 的极值点 $x_0$，如果 $x_0$ 既是 $(x_0, +\infty) \cap D(f)$ 的极限点，又是 $(-\infty, x_0) \cap D(f)$ 的极限点，则称 $x_0$ 为函数 $f$ 的\emph{内极值点}.
+\end{definition}\vspace{9pt}
+
+\begin{definition}
+    对于函数 $f$，实数 $x_0$，正整数 $n$，如果 $f$ 在 $x_0$ 处 $n$ 阶可导，则
+    \[f(x_0) + \sum_{i=1}^{n} \frac{f^{(i)}(x_0)}{i!} \cdot (\mathrm{id} - x_0)^i\]
+    被称为函数 $f$ 在 $x_0$ 处的 $n$ 阶泰勒函数.
 \end{definition}
 
 \subsection{基本定理}
@@ -38,7 +51,22 @@
     设函数 $f$ 在内极值点 $x_0$ 处可导，则 $f'(x_0) = 0$.
 \end{theorem}\vspace{9pt}
 
-\begin{theorem}
+\stepcounter{theorem}
+\begin{subtheorem}
     如果函数 $f$ 在闭区间 $[a,b]$ 上有定义且连续，在开区间 $(a,b)$ 上可导，并且 $f(a) = f(b)$，则
     \[\exists \xi \in (a,b): f'(\xi) = 0\]
-\end{theorem}\vspace{9pt}
+\end{subtheorem}
+
+\begin{subtheorem}
+    如果函数 $f$ 在闭区间 $[a,b]$ 上有定义且连续，在开区间 $(a,b)$ 上可导，则
+    \[\exists \xi \in (a,b): f(b) - f(a) = f'(\xi) \cdot (b-a)\]
+\end{subtheorem}
+
+\begin{subtheorem}
+    如果函数 $f,g$ 都在闭区间 $[a,b]$ 上有定义且连续，在开区间 $(a,b)$ 上可导，则
+    \[\exists \xi \in (a,b): \frac{f(b) - f(a)}{g(b) - g(a)} = \frac{f'(\xi)}{g'(\xi)}\]
+\end{subtheorem}\vspace{9pt}
+
+\begin{theorem}
+    函数 $f$ 在某一闭区间 $[a,b]$ 上函数值为某一固定常数的充要条件是 $f'$ 在开区间 $(a,b)$ 上有定义且函数值为零.
+\end{theorem}

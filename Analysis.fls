@@ -1193,11 +1193,10 @@ INPUT ./chapters/5.tex
 INPUT chapters/5.tex
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei52.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unihei/unihei5b.tfm
-INPUT c:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong9a.tfm
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unikai/unikai51.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unikai/unikai59.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unikai/unikai50.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unikai/unikai5c.tfm
-INPUT c:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unikai/unikai51.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unisong/unisongsl52.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unisong/unisongsl5b.tfm
 INPUT Analysis.aux
@@ -1219,7 +1218,6 @@ INPUT c:/Windows/Fonts/simkai.ttf
 INPUT c:/Windows/Fonts/simkai.ttf
 INPUT c:/Windows/Fonts/simkai.ttf
 INPUT c:/Windows/Fonts/simkai.ttf
-INPUT c:/Windows/Fonts/simsun.ttc
 INPUT c:/Windows/Fonts/simsun.ttc
 INPUT c:/Windows/Fonts/simsun.ttc
 INPUT c:/Windows/Fonts/simkai.ttf
